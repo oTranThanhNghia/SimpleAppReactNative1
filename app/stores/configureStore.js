@@ -1,6 +1,6 @@
-import {createStore, compose, applyMiddleware} from 'redux';
-import {createLogger} from 'redux-logger';
-import {persistStore, persistCombineReducers} from 'redux-persist';
+import { createStore, compose, applyMiddleware } from 'redux';
+import { createLogger } from 'redux-logger';
+import { persistStore, persistCombineReducers } from 'redux-persist';
 import storage from 'redux-persist/es/storage';
 import createSagaMiddleware from 'redux-saga';
 
@@ -26,13 +26,13 @@ if (__DEV__) {
 const reducers = persistCombineReducers(config, rootReducers);
 const enhancers = [applyMiddleware(...middleware)];
 const initialState = {};
-const persistConfig = {enhancers};
+const persistConfig = { enhancers };
 const store = createStore(reducers, initialState, compose(...enhancers));
 const persistor = persistStore(store, persistConfig, () => {
-  console.log('debug persistStore callback');
+  // console.log('debug persistStore callback');
 });
 const configureStore = () => {
-  return {persistor, store};
+  return { persistor, store };
 };
 
 sagaMiddleware.run(sagas);
