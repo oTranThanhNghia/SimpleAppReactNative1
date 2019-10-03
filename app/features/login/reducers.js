@@ -12,6 +12,7 @@ const initialState = {
 
 const handlers = {
   [types.LOGIN_REQUEST](state, action) {
+    console.log(TAG + ' ' + types.LOGIN_REQUEST + ' state= ' + JSON.stringify(state));
     return {
       ...state,
       username: action.username,
@@ -19,12 +20,14 @@ const handlers = {
     };
   },
   [types.LOGIN_RESPONSE](state, action) {
+    console.log(TAG + ' ' + types.LOGIN_RESPONSE + ' state= ' + JSON.stringify(state));
     return {
       ...state,
       id: action.response.id,
     };
   },
   [types.LOGIN_FAILED](state) {
+    console.log(TAG + ' ' + types.LOGIN_FAILED + ' state= ' + JSON.stringify(state));
     return {
       ...state,
       isLoggedIn: false,
