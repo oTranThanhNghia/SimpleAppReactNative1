@@ -18,6 +18,9 @@ import SettingScreen from 'app/features/setting/screen/SettingScreen';
 
 import * as ScreenTypes from 'app/navigation/ScreenTypes';
 
+import i18n from 'app/utils/i18n';
+import * as StringNames from 'app/assets/locales/StringNames';
+
 const TransitionScreen = (
   <Transition.Together>
     <Transition.Out type="slide-left" />
@@ -32,25 +35,25 @@ const MainAppScreens = createBottomTabNavigator(
     [ScreenTypes.Home]: {
       screen: HomeScreen,
       navigationOptions: {
-        title: 'Home',
+        title: i18n.t(StringNames.Home),
       },
     },
     [ScreenTypes.News]: {
       screen: NewsScreen,
       navigationOptions: {
-        title: 'News',
+        title: i18n.t(StringNames.News),
       },
     },
     [ScreenTypes.Notification]: {
       screen: NotificationScreen,
       navigationOptions: {
-        title: 'Notification',
+        title: i18n.t(StringNames.Notification),
       },
     },
     [ScreenTypes.Account]: {
       screen: AccountScreen,
       navigationOptions: {
-        title: 'Account',
+        title: i18n.t(StringNames.Account),
       },
     },
   },
@@ -74,6 +77,9 @@ const GroupScreensFromMainScreen = createStackNavigator(
   },
   {
     initialRouteName: ScreenTypes.MainAppScreens,
+    defaultNavigationOptions: {
+      headerBackTitle: i18n.t(StringNames.Back),
+    },
   }
 );
 

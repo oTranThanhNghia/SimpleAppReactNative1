@@ -81,6 +81,8 @@ PODS:
     - React-Core (= 0.60.5)
   - RNGestureHandler (1.4.1):
     - React
+  - RNLocalize (1.3.0):
+    - React
   - RNReanimated (1.3.0):
     - React
   - yoga (0.60.5.React)
@@ -107,6 +109,7 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-RCTWebSocket (from `../node_modules/react-native/Libraries/WebSocket`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNLocalize (from `../node_modules/react-native-localize`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -157,6 +160,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/WebSocket"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNLocalize:
+    :path: "../node_modules/react-native-localize"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
   yoga:
@@ -185,9 +190,10 @@ SPEC CHECKSUMS:
   React-RCTVibration: 2105b2e0e2b66a6408fc69a46c8a7fb5b2fdade0
   React-RCTWebSocket: cd932a16b7214898b6b7f788c8bddb3637246ac4
   RNGestureHandler: 4cb47a93019c1a201df2644413a0a1569a51c8aa
+  RNLocalize: cebb57c3c1e5479806204ce135b26bdd79d17e8a
   RNReanimated: 6abbbae2e5e72609d85aabd92a982a94566885f1
   yoga: 312528f5bbbba37b4dcea5ef00e8b4033fdd9411
 
-PODFILE CHECKSUM: 2297cb583620e4a966503f4f24805f4f87a96269
+PODFILE CHECKSUM: 12d44ae2620baf3432dec9f895d5a1b3438ec316
 
 COCOAPODS: 1.7.5

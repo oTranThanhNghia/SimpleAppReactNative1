@@ -6,6 +6,10 @@ import styles from 'app/features/login/screens/LoginScreenStyles';
 import * as loginActions from 'app/features/login/actions';
 import { getLoginState } from 'app/features/login/selectors';
 
+import i18n from 'app/utils/i18n';
+import * as StringNames from 'app/assets/locales/StringNames';
+import { getConfigs } from 'app/config';
+
 const TAG = 'LoginScreen';
 
 class LoginScreen extends Component {
@@ -20,7 +24,8 @@ class LoginScreen extends Component {
       <View style={styles.container}>
         <Text>Login Screen</Text>
         <Text>Status: {this.props.status}</Text>
-        <Button onPress={() => this._loginClick()} title="Login" />
+        <Text>Base_Url: {getConfigs().BASE_URL}</Text>
+        <Button onPress={() => this._loginClick()} title={i18n.t(StringNames.Login)} />
       </View>
     );
   }
