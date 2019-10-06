@@ -7,7 +7,7 @@ export default function* fetchLogin() {
   yield put(loginActions.enableLoader());
 
   // call api
-  // const respose= yield call...
+  // const response= yield call...
   yield delay(2000);
   const response = {
     success: true,
