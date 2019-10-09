@@ -1,9 +1,7 @@
 import React from 'react';
-import {
-  createAppContainer,
-  createStackNavigator,
-  createBottomTabNavigator,
-} from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 import createAnimatedSwitchNavigator from 'react-navigation-animated-switch';
 import { Transition } from 'react-native-reanimated';
 
@@ -28,8 +26,7 @@ const TransitionScreen = (
   </Transition.Together>
 );
 
-// https://reactnavigation.org/docs/en/3.x/tab-based-navigation.html
-// https://reactnavigation.org/docs/en/3.x/bottom-tab-navigator.html
+// https://reactnavigation.org/docs/en/bottom-tab-navigator.html
 const MainAppScreens = createBottomTabNavigator(
   {
     [ScreenTypes.Home]: {
@@ -62,7 +59,7 @@ const MainAppScreens = createBottomTabNavigator(
   }
 );
 
-// https://reactnavigation.org/docs/en/3.x/stack-navigator.html
+// https://reactnavigation.org/docs/en/stack-navigator.html
 const GroupScreensFromMainScreen = createStackNavigator(
   {
     [ScreenTypes.MainAppScreens]: {
@@ -83,7 +80,7 @@ const GroupScreensFromMainScreen = createStackNavigator(
   }
 );
 
-// https://reactnavigation.org/docs/en/3.x/animated-switch-navigator.html
+// https://reactnavigation.org/docs/en/animated-switch-navigator.html
 const AnimatedSwitchNavigator = createAnimatedSwitchNavigator(
   {
     [ScreenTypes.Splash]: {
