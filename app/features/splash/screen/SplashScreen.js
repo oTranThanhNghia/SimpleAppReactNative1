@@ -11,7 +11,7 @@ export default class SplashScreen extends Component {
     console.log(TAG + ' componentDidMount');
     setTimeout(() => {
       NavigationHelpers.navigateToLogin();
-    }, 2000);
+    }, 500);
   }
 
   render() {

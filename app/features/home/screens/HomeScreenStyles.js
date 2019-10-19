@@ -1,10 +1,15 @@
 import { StyleSheet } from 'react-native';
+import commonStyles from 'app/theme/Styles';
 
 export default StyleSheet.create({
   container: {
-    alignItems: 'center',
-    display: 'flex',
     flex: 1,
-    justifyContent: 'center',
+  },
+  itemText: {
+    ...commonStyles.wrapText,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    paddingLeft: 5,
+    paddingRight: 5,
   },
 });

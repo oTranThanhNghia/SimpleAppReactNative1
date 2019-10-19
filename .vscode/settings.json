@@ -1,0 +1,7 @@
+{
+    "flow.pathToFlow": "${workspaceFolder}/node_modules/.bin/flow",
+    "flow.useNPMPackagedFlow": true,
+    "editor.formatOnSave": true,
+    "javascript.validate.enable": false,
+    "javascript.format.enable": false
+}

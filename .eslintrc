@@ -1,4 +1,5 @@
 {
+  "parser": "babel-eslint",
   "plugins": ["react", "react-native", "prettier"],
   "parserOptions": {
     "ecmaVersion": 2018,
@@ -24,6 +25,8 @@
     }
   },
   "rules": {
-    "react-native/no-raw-text": 0 // Avoid false positive, wait for fix
+    "react-native/no-raw-text": 0, 
+    "react-native/no-color-literals": 0,
+    "react-native/no-inline-styles": 0
   }
 }
