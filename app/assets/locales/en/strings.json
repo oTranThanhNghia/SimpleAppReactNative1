@@ -6,5 +6,7 @@
   "Setting": "Setting",
   "News": "News",
   "Notification": "Notification",
-  "Account": "Account"
+  "Account": "Account",
+  "NoConnection": "No connection",
+  "NoData": "No data"
 }

@@ -20,6 +20,7 @@ export type BaseResponse = {
   articles: ?Array<ArticleObj>,
   page: ?number,
   loading: ?boolean,
+  isRefreshing: ?boolean,
 };
 
 export type BaseErrorResponse = {

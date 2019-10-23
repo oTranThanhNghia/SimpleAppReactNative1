@@ -5,3 +5,5 @@ export const Setting = 'Setting';
 export const News = 'News';
 export const Notification = 'Notification';
 export const Account = 'Account';
+export const NoConnection = 'NoConnection';
+export const NoData = 'NoData';

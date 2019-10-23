@@ -8,6 +8,7 @@ export function requestTopHeadlines(
   country: string,
   page: number,
   pageSize: number,
+  isRefreshing: boolean,
   initialData: ?BaseResponse
 ): ParamTopHeadlines {
   console.log(TAG + ' requestTopHeadlines() initialData= ' + JSON.stringify(initialData));
@@ -16,6 +17,7 @@ export function requestTopHeadlines(
     country,
     page,
     pageSize,
+    isRefreshing,
     initialData,
   };
 }

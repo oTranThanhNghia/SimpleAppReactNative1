@@ -14,5 +14,6 @@ export type ParamTopHeadlines = {
   country: string,
   page: number,
   pageSize: number,
+  isRefreshing: ?boolean,
   initialData: ?BaseResponse,
 };

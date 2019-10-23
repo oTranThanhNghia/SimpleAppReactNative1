@@ -8,36 +8,44 @@ import LodashArray from 'lodash/array';
 
 const TAG = 'HomeSaga';
 
-export default function* fetchHomeTopHeadLines(data: ParamTopHeadlines) {
-  console.log(TAG + ' fetchHomeTopHeadLines data= ' + JSON.stringify(data));
+export default function* fetchHomeTopHeadLines(param: ParamTopHeadlines) {
+  console.log(TAG + ' fetchHomeTopHeadLines data= ' + JSON.stringify(param));
   // yield put(homeActions.enableLoader());
 
   // call api
   const response: BaseResponse | BaseErrorResponse = yield call(
     getTopHeadlines,
-    data.country,
-    data.pageSize,
-    data.page
+    param.country,
+    param.pageSize,
+    param.page
   );
 
   // console.log(TAG + ' response= ' + JSON.stringify(response));
 
   if (response.status === 'ok') {
-    const homeResponse: BaseResponse = { loading: false, page: data.page, ...response };
+    const homeResponse: BaseResponse = {
+      loading: false,
+      isRefreshing: false,
+      page: param.page,
+      ...response,
+    };
     console.log(
       TAG +
         ' mergedArray data.initialData= ' +
-        data.initialData +
+        param.initialData +
         ' homeResponse.articles= ' +
         homeResponse.articles
     );
-    if (data.initialData && homeResponse.articles) {
+    if (
+      param.initialData &&
+      param.initialData.articles &&
+      homeResponse.articles &&
+      param.isRefreshing === false
+    ) {
       // check not null
-      if (data.initialData.articles.length >= 0 && homeResponse.articles.length >= 0) {
-        const mergedArray = LodashArray.concat(data.initialData.articles, homeResponse.articles);
-        // TODO: keep going
+      if (param.initialData.articles.length >= 0 && homeResponse.articles.length >= 0) {
+        const mergedArray = LodashArray.concat(param.initialData.articles, homeResponse.articles);
         console.log(TAG + ' mergedArray= ' + JSON.stringify(mergedArray));
-
         homeResponse.articles = mergedArray;
       }
     }

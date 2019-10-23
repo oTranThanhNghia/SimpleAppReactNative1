@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, FlatList, Image, RefreshControl, ActivityIndicator } from 'react-native';
-import { Text, Card } from 'native-base';
+import { Text, Card, Button } from 'native-base';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styles from 'app/features/home/screens/HomeScreenStyles';
@@ -25,33 +25,34 @@ type Props = {
 class HomeScreen extends Component<Props> {
   constructor(props) {
     super(props);
-    this.state = {
-      // loading: false, // user list loading
-      isRefreshing: false, // for pull to refresh
-    };
   }
 
   componentDidMount() {
     console.log(TAG + ' componentDidMount ');
     const status = this.props.status;
-    this.getTopHeadlines(status.page === null ? 1 : status.page, null);
+    this.getTopHeadlines(status.page === null ? 1 : status.page, false, null);
   }
 
-  getTopHeadlines(page: number, initialData: ?BaseResponse) {
-    console.log(TAG + ' getTopHeadlines page= ' + page);
+  getTopHeadlines(page: number, isRefreshing: boolean, initialData: ?BaseResponse) {
+    console.log(TAG + ' getTopHeadlines page= ' + page + ' isRefreshing= ' + isRefreshing);
     const status = this.props.status;
 
-    // this.setState({ loading: true });
     let isRequestMore = true;
     if (status.articles && status.totalResults && status.articles.length >= status.totalResults) {
       isRequestMore = false;
     }
 
-    if (page !== null && typeof page === 'number' && !isNaN(page) && isRequestMore)
+    if (
+      page !== null &&
+      typeof page === 'number' &&
+      !isNaN(page) &&
+      (isRequestMore || isRefreshing)
+    )
       this.props.onTopHeadlines(
         stringResources.default_country,
         page,
         integerResources.default_page_size,
+        isRefreshing,
         initialData
       );
   }
@@ -61,8 +62,10 @@ class HomeScreen extends Component<Props> {
   }
 
   onReloadData() {
-    console.log(TAG + ' onReloadData state= ' + JSON.stringify(this.state));
-    // this.setState({ isRefreshing: true });
+    const status = this.props.status;
+    console.log(TAG + ' onReloadData ');
+    const isRefreshing = status.status !== 'error' && status.status !== 'none';
+    this.getTopHeadlines(1, isRefreshing, status);
   }
 
   handleLoadMore() {
@@ -78,13 +81,13 @@ class HomeScreen extends Component<Props> {
     );
     if (!status.loading && status.status === 'ok') {
       const page = status.page + 1;
-      this.getTopHeadlines(page, status);
+      this.getTopHeadlines(page, false, status);
     }
   }
 
   renderFooterFlatList() {
     const status = this.props.status;
-    if (status.loading === false) return null;
+    if (status.loading === false) return <View style={{ height: 20 }} />;
     else return <ActivityIndicator />;
   }
 
@@ -120,6 +123,35 @@ class HomeScreen extends Component<Props> {
           <ActivityIndicator style={{}} />
         </View>
       );
+    } else if (status.status === 'error' && status.page === 1) {
+      return (
+        <SafeAreaView
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'column',
+          }}
+        >
+          <Text style={{ padding: 10 }}>{i18n.t(StringNames.NoConnection)}</Text>
+          <Button center onPress={() => this.onReloadData()}>
+            <Text>Retry</Text>
+          </Button>
+        </SafeAreaView>
+      );
+    } else if (status.articles && status.articles.length === 0) {
+      return (
+        <SafeAreaView
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'column',
+          }}
+        >
+          <Text>{i18n.t(StringNames.NoData)}</Text>
+        </SafeAreaView>
+      );
     } else {
       return (
         <SafeAreaView style={styles.container}>
@@ -128,13 +160,13 @@ class HomeScreen extends Component<Props> {
             data={status.articles}
             refreshControl={
               <RefreshControl
-                refreshing={this.state.isRefreshing}
+                refreshing={status.isRefreshing}
                 onRefresh={() => this.onReloadData()}
               />
             }
             renderItem={({ item, index }) => this.renderItemList(item, index)}
             ListFooterComponent={() => this.renderFooterFlatList()}
-            onEndReachedThreshold={0.4}
+            onEndReachedThreshold={0.5}
             keyExtractor={(item, index) => this.onKeyExtractor(item, index)}
             onEndReached={() => this.handleLoadMore()}
           />
@@ -154,8 +186,14 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   console.log(TAG + ' mapDispatchToProps ');
   return {
-    onTopHeadlines: (country: string, page: number, pageSize: number, initialData: ?BaseResponse) =>
-      dispatch(HomeActions.requestTopHeadlines(country, page, pageSize, initialData)),
+    onTopHeadlines: (
+      country: string,
+      page: number,
+      pageSize: number,
+      isRefreshing: boolean,
+      initialData: ?BaseResponse
+    ) =>
+      dispatch(HomeActions.requestTopHeadlines(country, page, pageSize, isRefreshing, initialData)),
   };
 }
 
