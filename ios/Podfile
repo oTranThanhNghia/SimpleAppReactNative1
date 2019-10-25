@@ -38,6 +38,7 @@ target 'SimpleAppReactNative1' do
   pod 'RNLocalize', :path => '../node_modules/react-native-localize'
   pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
   pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
+  pod 'react-native-webview', :path => '../node_modules/react-native-webview'
 
   target 'SimpleAppReactNative1Tests' do
     inherit! :search_paths

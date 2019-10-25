@@ -13,6 +13,7 @@ import NewsScreen from 'app/features/news/screen/NewsScreen';
 import NotificationScreen from 'app/features/notification/screen/NotificationScreen';
 import AccountScreen from 'app/features/account/screen/AccountScreen';
 import SettingScreen from 'app/features/setting/screen/SettingScreen';
+import DetailTopHeadlinesScreen from 'app/features/detail_top_headlines/screen/DetailTopHeadlinesScreen';
 
 import * as ScreenTypes from 'app/navigation/ScreenTypes';
 
@@ -71,12 +72,19 @@ const GroupScreensFromMainScreen = createStackNavigator(
     [ScreenTypes.Setting]: {
       screen: SettingScreen,
     },
+    [ScreenTypes.DetailTopHeadlines]: {
+      screen: DetailTopHeadlinesScreen,
+      navigationOptions: {
+        title: i18n.t(StringNames.Detail),
+      },
+    },
   },
   {
     initialRouteName: ScreenTypes.MainAppScreens,
     defaultNavigationOptions: {
       headerBackTitle: i18n.t(StringNames.Back),
     },
+    headerLayoutPreset: 'center',
   }
 );
 

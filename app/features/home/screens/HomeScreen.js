@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, FlatList, Image, RefreshControl, ActivityIndicator } from 'react-native';
-import { Text, Card, Button } from 'native-base';
+import { Text, Card, Button, CardItem, Left, Right, Footer } from 'native-base';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styles from 'app/features/home/screens/HomeScreenStyles';
@@ -12,6 +12,7 @@ import { BaseResponse, ArticleObj } from 'app/types/ResponseTypes';
 import { Drawables } from 'app/assets/images';
 import { getIntegerResources, getStringResources } from 'app/config';
 import SafeAreaView from 'react-native-safe-area-view';
+import * as NavigationHelpers from 'app/navigation/NavigationHelpers';
 
 const TAG = 'HomeScreen';
 
@@ -61,6 +62,11 @@ class HomeScreen extends Component<Props> {
     return index.toString();
   }
 
+  onItemFlatListClick(item: ArticleObj, index: number) {
+    console.log(TAG + ' onItemFlatListClick() index= ' + index);
+    NavigationHelpers.navigateToDetailHeadlines({ data: item.url });
+  }
+
   onReloadData() {
     const status = this.props.status;
     console.log(TAG + ' onReloadData ');
@@ -91,21 +97,31 @@ class HomeScreen extends Component<Props> {
     else return <ActivityIndicator />;
   }
 
-  renderItemList(item: ArticleObj, index) {
+  renderItemList(item: ArticleObj, index: number) {
     // console.log(TAG + ' renderItemList item= ' + JSON.stringify(item) + '  \n\n index= ' + index);
     const imgUrl =
       item.urlToImage === null ? Drawables.no_image_available : { uri: item.urlToImage };
 
     return (
-      <Card style={{ flexDirection: 'row', flex: 1, padding: 10 }}>
-        <Image source={imgUrl} style={{ width: 150, height: 112 }} />
-
-        <View style={styles.itemText}>
-          <Text numberOfLines={4}>{item.title}</Text>
-          <Text numberOfLines={2} style={{ fontSize: 14, fontStyle: 'italic' }}>
-            From: {item.source != null && item.source.name != null ? item.source.name : 'unknown'}
-          </Text>
-        </View>
+      <Card>
+        <CardItem button onPress={() => this.onItemFlatListClick(item, index)}>
+          <Left>
+            <Image source={imgUrl} style={{ width: 150, height: 112 }} />
+          </Left>
+          <Right>
+            <CardItem cardBody style={{}}>
+              <Text numberOfLines={4} style={{ fontSize: 15 }}>
+                {item.title}
+              </Text>
+            </CardItem>
+            <CardItem cardBody style={{ alignSelf: 'flex-start' }}>
+              <Text numberOfLines={2} style={{ fontSize: 12, fontStyle: 'italic' }}>
+                From:{' '}
+                {item.source != null && item.source.name != null ? item.source.name : 'unknown'}
+              </Text>
+            </CardItem>
+          </Right>
+        </CardItem>
       </Card>
     );
   }
@@ -123,7 +139,11 @@ class HomeScreen extends Component<Props> {
           <ActivityIndicator style={{}} />
         </View>
       );
-    } else if (status.status === 'error' && status.page === 1) {
+    } else if (
+      status.status === 'error' &&
+      status.page === 1 &&
+      (!status.articles || status.articles.length === 0)
+    ) {
       return (
         <SafeAreaView
           style={{

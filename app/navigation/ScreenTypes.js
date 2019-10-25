@@ -9,3 +9,4 @@ export const Setting = 'Setting';
 
 export const MainAppScreens = 'MainAppScreens';
 export const GroupScreensFromMainScreen = 'GroupScreensFromMainScreen';
+export const DetailTopHeadlines = 'DetailTopHeadlines';

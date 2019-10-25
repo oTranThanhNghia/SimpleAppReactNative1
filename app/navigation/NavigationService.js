@@ -3,8 +3,8 @@ import { NavigationActions, StackActions } from 'react-navigation';
 
 let _navigator;
 
-function setTopLevelNavigator(navogatorRef) {
-  _navigator = navogatorRef;
+function setTopLevelNavigator(navigatorRef) {
+  _navigator = navigatorRef;
 }
 
 function navigate(routeName, params) {
