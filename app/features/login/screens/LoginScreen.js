@@ -9,12 +9,23 @@ import { getLoginState } from 'app/features/login/selectors';
 import i18n from 'app/utils/i18n';
 import * as StringNames from 'app/assets/locales/StringNames';
 import { getConfigs } from 'app/config';
+import SplashScreenNative from 'react-native-splash-screen';
 
 const TAG = 'LoginScreen';
+// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
+// https://flow.org/en/docs/react/components/
+type Props = {
+  status: PropTypes.string,
+  onLogin: PropTypes.func,
+};
 
-class LoginScreen extends Component {
+class LoginScreen extends Component<Props> {
+  // componentDidMount() {
+  //   SplashScreenNative.hide();
+  // }
+
   // https://medium.com/@User3141592/react-gotchas-and-best-practices-2d47fd67dd22
-  _loginClick() {
+  loginClick() {
     console.log(TAG + ' loginClick ');
     this.props.onLogin('nghia', '123456');
   }
@@ -25,17 +36,11 @@ class LoginScreen extends Component {
         <Text>Login Screen</Text>
         <Text>Status: {this.props.status}</Text>
         <Text>Base_Url: {getConfigs().BASE_URL}</Text>
-        <Button onPress={() => this._loginClick()} title={i18n.t(StringNames.Login)} />
+        <Button onPress={() => this.loginClick()} title={i18n.t(StringNames.Login)} />
       </View>
     );
   }
 }
-
-// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
-LoginScreen.propTypes = {
-  status: PropTypes.string,
-  onLogin: PropTypes.func,
-};
 
 function mapStateToProps(state) {
   console.log(TAG + ' mapStateToProps ' + JSON.stringify(state));

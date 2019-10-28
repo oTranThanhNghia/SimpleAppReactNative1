@@ -1,5 +1,4 @@
 export const Login = 'Login';
-export const Splash = 'Splash';
 
 export const Home = 'Home';
 export const Notification = 'Notification';
@@ -9,3 +8,4 @@ export const Setting = 'Setting';
 
 export const MainAppScreens = 'MainAppScreens';
 export const GroupScreensFromMainScreen = 'GroupScreensFromMainScreen';
+export const DetailTopHeadlines = 'DetailTopHeadlines';

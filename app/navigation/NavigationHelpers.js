@@ -20,3 +20,7 @@ export function navigateToSplash(params) {
 export function navigateToSetting(params) {
   NavigationService.navigate(ScreenTypes.Setting, params);
 }
+
+export function navigateToDetailHeadlines(params) {
+  NavigationService.navigate(ScreenTypes.DetailTopHeadlines, params);
+}

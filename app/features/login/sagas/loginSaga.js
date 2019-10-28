@@ -8,7 +8,7 @@ export default function* fetchLogin() {
 
   // call api
   // const response= yield call...
-  yield delay(2000);
+  yield delay(500);
   const response = {
     success: true,
     data: { id: 1 },

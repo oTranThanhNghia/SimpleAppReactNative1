@@ -10,7 +10,7 @@ import sagas from 'app/stores/sagas';
 const config = {
   key: 'root',
   storage,
-  blacklist: ['loadingReducer'],
+  blacklist: ['homeReducer'],
   debug: true,
 };
 
