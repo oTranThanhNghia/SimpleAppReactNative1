@@ -9,6 +9,7 @@ import { getLoginState } from 'app/features/login/selectors';
 import i18n from 'app/utils/i18n';
 import * as StringNames from 'app/assets/locales/StringNames';
 import { getConfigs } from 'app/config';
+import SplashScreenNative from 'react-native-splash-screen';
 
 const TAG = 'LoginScreen';
 // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
@@ -19,6 +20,10 @@ type Props = {
 };
 
 class LoginScreen extends Component<Props> {
+  // componentDidMount() {
+  //   SplashScreenNative.hide();
+  // }
+
   // https://medium.com/@User3141592/react-gotchas-and-best-practices-2d47fd67dd22
   loginClick() {
     console.log(TAG + ' loginClick ');

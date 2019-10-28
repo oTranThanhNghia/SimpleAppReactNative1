@@ -5,9 +5,7 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import createAnimatedSwitchNavigator from 'react-navigation-animated-switch';
 import { Transition } from 'react-native-reanimated';
 
-import SplashScreen from 'app/features/splash/screen/SplashScreen';
 import LoginScreen from 'app/features/login/screens/LoginScreen';
-
 import HomeScreen from 'app/features/home/screens/HomeScreen';
 import NewsScreen from 'app/features/news/screen/NewsScreen';
 import NotificationScreen from 'app/features/notification/screen/NotificationScreen';
@@ -91,12 +89,6 @@ const GroupScreensFromMainScreen = createStackNavigator(
 // https://reactnavigation.org/docs/en/animated-switch-navigator.html
 const AnimatedSwitchNavigator = createAnimatedSwitchNavigator(
   {
-    [ScreenTypes.Splash]: {
-      screen: SplashScreen,
-      navigationOptions: {
-        header: null,
-      },
-    },
     [ScreenTypes.Login]: {
       screen: LoginScreen,
       navigationOptions: {
@@ -106,7 +98,7 @@ const AnimatedSwitchNavigator = createAnimatedSwitchNavigator(
     [ScreenTypes.GroupScreensFromMainScreen]: GroupScreensFromMainScreen,
   },
   {
-    initialRouteName: ScreenTypes.Splash,
+    initialRouteName: ScreenTypes.Login,
     transition: TransitionScreen,
   }
 );
