@@ -87,20 +87,44 @@ const GroupScreensFromMainScreen = createStackNavigator(
 );
 
 // https://reactnavigation.org/docs/en/animated-switch-navigator.html
-const AnimatedSwitchNavigator = createAnimatedSwitchNavigator(
+// const MainNavigator = createAnimatedSwitchNavigator(
+//   {
+//     [ScreenTypes.Login]: {
+//       screen: LoginScreen,
+//       navigationOptions: {
+//         header: null,
+//       },
+//     },
+//     [ScreenTypes.GroupScreensFromMainScreen]: GroupScreensFromMainScreen,
+//   },
+//   {
+//     initialRouteName: ScreenTypes.Login,
+//     transition: TransitionScreen,
+//   }
+// );
+
+const MainNavigator = createStackNavigator(
   {
-    [ScreenTypes.Login]: {
-      screen: LoginScreen,
+    [ScreenTypes.HomeScreen]: {
+      screen: HomeScreen,
       navigationOptions: {
         header: null,
       },
     },
-    [ScreenTypes.GroupScreensFromMainScreen]: GroupScreensFromMainScreen,
+    [ScreenTypes.DetailTopHeadlines]: {
+      screen: DetailTopHeadlinesScreen,
+      navigationOptions: {
+        title: i18n.t(StringNames.Detail),
+      },
+    },
   },
   {
-    initialRouteName: ScreenTypes.Login,
-    transition: TransitionScreen,
+    initialRouteName: ScreenTypes.HomeScreen,
+    defaultNavigationOptions: {
+      headerBackTitle: i18n.t(StringNames.Back),
+    },
+    headerLayoutPreset: 'center',
   }
 );
 
-export default createAppContainer(AnimatedSwitchNavigator);
+export default createAppContainer(MainNavigator);
