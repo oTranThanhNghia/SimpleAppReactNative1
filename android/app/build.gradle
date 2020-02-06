@@ -180,11 +180,11 @@ android {
 }
 
 // https://github.com/facebook/react-native/issues/26400 and https://github.com/facebook/react-native/pull/26759
-configurations.all {
-    resolutionStrategy {
-        force "com.facebook.soloader:soloader:0.8.0"
-    }
-}
+//configurations.all {
+//    resolutionStrategy {
+//        force "com.facebook.soloader:soloader:0.8.0"
+//    }
+//}
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
