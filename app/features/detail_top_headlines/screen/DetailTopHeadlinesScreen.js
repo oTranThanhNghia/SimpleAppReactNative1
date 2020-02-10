@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { ActivityIndicator, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { WebView } from 'react-native-webview';
 import PropTypes from 'prop-types';
-import SafeAreaView from 'react-native-safe-area-view';
 import styles from './DetailTopHeadlinesScreenStyles';
+import ProgressBar from 'react-native-progress/Bar';
 
 const TAG = 'DetailTopHeadlinesScreen';
 type Props = {
@@ -11,8 +11,9 @@ type Props = {
 };
 
 export default class DetailTopHeadlinesScreen extends Component<Props> {
-  onRenderLoading() {
-    return <ActivityIndicator style={styles.loading} />;
+  constructor(props) {
+    super(props);
+    this.state = { percent: 0, visible: false };
   }
 
   onRenderError(errorDomain, errorCode, errorDesc) {
@@ -23,23 +24,59 @@ export default class DetailTopHeadlinesScreen extends Component<Props> {
     );
   }
 
+  onLoadStart(event) {
+    // console.log('1=====> onLoadStart nativeEvent= ' + JSON.stringify(event.nativeEvent));
+    this.setState({ visible: true, percent: 0 });
+  }
+
+  onLoadEnd(event) {
+    // console.log('3=====> onLoadEnd nativeEvent= ' + JSON.stringify(event.nativeEvent));
+    this.timer = setTimeout(() => {
+      this.setState({ visible: false });
+    }, 500);
+  }
+
+  onLoadProgress(event) {
+    // console.log('2=====> onLoadProgress nativeEvent= ' + JSON.stringify(event.nativeEvent));
+    this.setState({ percent: event.nativeEvent.progress });
+  }
+
+  onError(event) {
+    this.setState({ percent: 1 });
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.timer);
+  }
+
   render() {
     const { navigation } = this.props;
     const uri = navigation.getParam('data', '');
     console.log(TAG + ' render() navigation= ' + JSON.stringify(navigation));
     return (
-      <SafeAreaView style={{ flex: 1 }}>
+      <View style={{ flex: 1 }}>
+        {this.state.visible && (
+          <View>
+            <ProgressBar progress={this.state.percent} width={null} height={1} borderRadius={0} />
+            <Text>{this.state.percent}</Text>
+          </View>
+        )}
         <WebView
           source={{ uri: uri }}
-          startInLoadingState={true}
-          renderLoading={() => this.onRenderLoading()}
+          startInLoadingState={false}
+          onLoadStart={(event) => this.onLoadStart(event)}
+          onLoadProgress={(event) => this.onLoadProgress(event)}
+          onLoadEnd={(event) => this.onLoadEnd(event)}
+          onError={(event) => this.onError(event)}
+          allowsInlineMediaPlayback={true}
+          mediaPlaybackRequiresUserAction={false}
           cacheEnabled={true}
           cacheMode={'LOAD_CACHE_ELSE_NETWORK'}
           renderError={(errorDomain, errorCode, errorDesc) =>
             this.onRenderError(errorDomain, errorCode, errorDesc)
           }
         />
-      </SafeAreaView>
+      </View>
     );
   }
 }
