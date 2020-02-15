@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import styles from './DetailTopHeadlinesScreenStyles';
 import ProgressBar from 'react-native-progress/Bar';
 
+import { firebase } from '@react-native-firebase/crashlytics';
+
 const TAG = 'DetailTopHeadlinesScreen';
 type Props = {
   navigation: any,
@@ -26,6 +28,10 @@ export default class DetailTopHeadlinesScreen extends Component<Props> {
 
   onLoadStart(event) {
     // console.log('1=====> onLoadStart nativeEvent= ' + JSON.stringify(event.nativeEvent));
+
+    // crash app
+    // firebase.crashlytics().log('Testing crash');
+    // firebase.crashlytics().crash();
     this.setState({ visible: true, percent: 0 });
   }
 

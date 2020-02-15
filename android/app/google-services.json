@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "232862633438",
+    "firebase_url": "https://simpleappreactnative1.firebaseio.com",
+    "project_id": "simpleappreactnative1",
+    "storage_bucket": "simpleappreactnative1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:232862633438:android:30dd5126a56667c4f7e14f",
+        "android_client_info": {
+          "package_name": "com.ngh.simpleappreactnative1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "232862633438-oj9fk8kme8pllb7e16pnasiu8utscmpt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ngh.simpleappreactnative1",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "232862633438-9gmpecmc3uck1r4dadhm5as35b4u38ci.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzDmdOSM7XvagU8yqZXkDnv-T85EzRd1k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "232862633438-9gmpecmc3uck1r4dadhm5as35b4u38ci.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
