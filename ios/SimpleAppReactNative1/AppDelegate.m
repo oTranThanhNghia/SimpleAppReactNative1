@@ -11,6 +11,7 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 #import "RNSplashScreen.h"
+@import Firebase;
 
 @implementation AppDelegate
 
@@ -21,6 +22,7 @@
                                                    moduleName:@"SimpleAppReactNative1"
                                             initialProperties:nil];
 
+  [FIRApp configure];
   rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
