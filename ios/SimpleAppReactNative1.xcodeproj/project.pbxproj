@@ -10,10 +10,10 @@
 		00E356F31AD99517003FC87E /* SimpleAppReactNative1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SimpleAppReactNative1Tests.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		72DA9451F10C5A65CD70E963 /* libPods-SimpleAppReactNative1-SimpleAppReactNative1Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C077BDE9D3667E22E5E6AF8 /* libPods-SimpleAppReactNative1-SimpleAppReactNative1Tests.a */; };
+		A5B776D781F324E94CC5088B /* libPods-SimpleAppReactNative1-SimpleAppReactNative1Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C077BDE9D3667E22E5E6AF8 /* libPods-SimpleAppReactNative1-SimpleAppReactNative1Tests.a */; };
 		BA0C183E24308E0E00FF952B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA0C183D24308E0E00FF952B /* GoogleService-Info.plist */; };
-		BA36BADE245F18DD00248876 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA36BADD245F18DD00248876 /* AppDelegate.m */; };
-		BA36BAE0245F195900248876 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA36BADF245F195900248876 /* main.m */; };
+		BADE2EE4245F23E40092642B /* SimpleAppReactNative1-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = BADE2EE3245F23D50092642B /* SimpleAppReactNative1-Bridging-Header.h */; };
+		BAF8A61F245E5EC600A32D5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF8A61E245E5EC600A32D5A /* AppDelegate.swift */; };
 		BAF8A621245E641B00A32D5A /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = BAF8A620245E641B00A32D5A /* main.jsbundle */; };
 		D88DD615B80ED2ACCC0DC079 /* libPods-SimpleAppReactNative1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D717F942FFE24F6FADD8969 /* libPods-SimpleAppReactNative1.a */; };
 /* End PBXBuildFile section */
@@ -50,10 +50,10 @@
 		A1A383C26E72C06CBF47E8E4 /* Pods-SimpleAppReactNative1-SimpleAppReactNative1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleAppReactNative1-SimpleAppReactNative1Tests.debug.xcconfig"; path = "Target Support Files/Pods-SimpleAppReactNative1-SimpleAppReactNative1Tests/Pods-SimpleAppReactNative1-SimpleAppReactNative1Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B458E6F57195FDDCDB59CF00 /* Pods-SimpleAppReactNative1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleAppReactNative1.release.xcconfig"; path = "Target Support Files/Pods-SimpleAppReactNative1/Pods-SimpleAppReactNative1.release.xcconfig"; sourceTree = "<group>"; };
 		BA0C183D24308E0E00FF952B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BA36BADC245F18C100248876 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BA36BADD245F18DD00248876 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BA36BADF245F195900248876 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BADE2EE3245F23D50092642B /* SimpleAppReactNative1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleAppReactNative1-Bridging-Header.h"; sourceTree = "<group>"; };
+		BAF8A61E245E5EC600A32D5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAF8A620245E641B00A32D5A /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		BAFE4E4C245F2BD7005A6430 /* libReact-Core.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-Core.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C9021EF1D589DE62F171C4 /* Pods-SimpleAppReactNative1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleAppReactNative1.debug.xcconfig"; path = "Target Support Files/Pods-SimpleAppReactNative1/Pods-SimpleAppReactNative1.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72DA9451F10C5A65CD70E963 /* libPods-SimpleAppReactNative1-SimpleAppReactNative1Tests.a in Frameworks */,
+				A5B776D781F324E94CC5088B /* libPods-SimpleAppReactNative1-SimpleAppReactNative1Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,12 +101,11 @@
 			children = (
 				BA0C183D24308E0E00FF952B /* GoogleService-Info.plist */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				BADE2EE3245F23D50092642B /* SimpleAppReactNative1-Bridging-Header.h */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
-				BA36BADC245F18C100248876 /* AppDelegate.h */,
-				BA36BADD245F18DD00248876 /* AppDelegate.m */,
+				BAF8A61E245E5EC600A32D5A /* AppDelegate.swift */,
 				BAF8A620245E641B00A32D5A /* main.jsbundle */,
-				BA36BADF245F195900248876 /* main.m */,
 			);
 			name = SimpleAppReactNative1;
 			sourceTree = "<group>";
@@ -114,6 +113,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BAFE4E4C245F2BD7005A6430 /* libReact-Core.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				1D717F942FFE24F6FADD8969 /* libPods-SimpleAppReactNative1.a */,
@@ -410,8 +410,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA36BAE0245F195900248876 /* main.m in Sources */,
-				BA36BADE245F18DD00248876 /* AppDelegate.m in Sources */,
+				BADE2EE4245F23E40092642B /* SimpleAppReactNative1-Bridging-Header.h in Sources */,
+				BAF8A61F245E5EC600A32D5A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +442,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A1A383C26E72C06CBF47E8E4 /* Pods-SimpleAppReactNative1-SimpleAppReactNative1Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -471,6 +472,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7D8FA927CA966DDEBCD6F7DD /* Pods-SimpleAppReactNative1-SimpleAppReactNative1Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
