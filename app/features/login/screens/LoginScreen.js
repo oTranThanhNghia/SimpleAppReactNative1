@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { View, Button, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import styles from 'app/features/login/screens/LoginScreenStyles';
-import * as loginActions from 'app/features/login/actions';
-import { getLoginState } from 'app/features/login/selectors';
+import styles from './LoginScreenStyles';
+import * as loginActions from '../actions';
+import { getLoginState } from '../selectors';
 
-import i18n from 'app/utils/i18n';
-import * as StringNames from 'app/assets/locales/StringNames';
-import { getConfigs } from 'app/config';
+import i18n from '../../../utils/i18n';
+import * as StringNames from '../../../assets/locales/StringNames';
+import { getConfigs } from '../../../config';
 import SplashScreenNative from 'react-native-splash-screen';
 
 const TAG = 'LoginScreen';

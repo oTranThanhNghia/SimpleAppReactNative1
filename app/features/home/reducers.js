@@ -1,7 +1,7 @@
-import createReducer from 'app/lib/createReducer';
-import * as types from 'app/features/home/actionNames';
-import { ParamTopHeadlinesResponse, ParamTopHeadlines } from 'app/types/ActionTypes';
-import { BaseResponse } from 'app/types/ResponseTypes';
+import createReducer from '../../lib/createReducer';
+import * as types from './actionNames';
+import { ParamTopHeadlinesResponse, ParamTopHeadlines } from '../../types/ActionTypes';
+import { BaseResponse } from '../../types/ResponseTypes';
 
 const TAG = 'HomeReducer';
 

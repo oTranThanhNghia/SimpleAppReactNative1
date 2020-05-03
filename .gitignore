@@ -32,6 +32,10 @@ local.properties
 *.iml
 *.apk
 
+# Android Studio
+.project
+.settings
+.classpath
 
 # node.js
 #

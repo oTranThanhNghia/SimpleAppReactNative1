@@ -1,5 +1,5 @@
-import createReducer from 'app/lib/createReducer';
-import * as types from 'app/features/login/actionTypes';
+import createReducer from '../../lib/createReducer';
+import * as types from './actionTypes';
 
 const TAG = 'LoginReducer';
 

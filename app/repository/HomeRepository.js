@@ -1,6 +1,5 @@
-import Api from 'app/api/Api';
-import ApiInstance from 'app/api/ApiInstance';
-// import { BaseParam } from 'app/api/ApiModule';
+import Api from '../api/Api';
+import ApiInstance from '../api/ApiInstance';
 
 export function getTopHeadlines(country: string, pageSize: number, page: number) {
   var params = {
