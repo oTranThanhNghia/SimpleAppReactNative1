@@ -1,9 +1,9 @@
 import { put, call } from 'redux-saga/effects';
 import { Alert } from 'react-native';
-import * as homeActions from 'app/features/home/actions';
-import { getTopHeadlines } from 'app/repository/HomeRepository';
-import { BaseResponse, BaseErrorResponse } from 'app/types/ResponseTypes';
-import { ParamTopHeadlines } from 'app/types/ActionTypes';
+import * as homeActions from '../actions';
+import { getTopHeadlines } from '../../../repository/HomeRepository';
+import { BaseResponse, BaseErrorResponse } from '../../../types/ResponseTypes';
+import { ParamTopHeadlines } from '../../../types/ActionTypes';
 import LodashArray from 'lodash/array';
 
 const TAG = 'HomeSaga';

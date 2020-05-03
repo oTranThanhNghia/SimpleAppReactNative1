@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/es/integration/react';
 import { I18nextProvider } from 'react-i18next';
-import configureStore from 'app/stores/configureStore';
-import AppNavigator from 'app/navigation';
-import i18n from 'app/utils/i18n';
+import configureStore from './stores/configureStore';
+import AppNavigator from './navigation';
+import i18n from './utils/i18n';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import LoaderScreen from 'app/features/loader/screen/LoaderScreen';
+import LoaderScreen from './features/loader/screen/LoaderScreen';
 
 const { persistor, store } = configureStore();
 

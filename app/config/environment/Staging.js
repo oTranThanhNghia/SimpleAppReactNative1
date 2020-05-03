@@ -1,4 +1,4 @@
-import packageJson from 'app/package.json';
+import packageJson from '../../../package.json';
 export default {
   BASE_URL: 'https://newsapi.org',
   API_KEY: '',

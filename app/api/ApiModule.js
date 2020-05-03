@@ -1,7 +1,7 @@
 // class ApiModule.js => get, post, ... basic class
 import axios, { AxiosInstance, AxiosResponse, AxiosError, AxiosRequestConfig } from 'axios';
-import { getConfigs } from 'app/config';
-import { BaseResponse, BaseErrorResponse } from 'app/types/ResponseTypes';
+import { getConfigs } from '../config';
+import { BaseResponse, BaseErrorResponse } from '../types/ResponseTypes';
 
 const TAG = 'ApiModule';
 const TIME_OUT = 30000;

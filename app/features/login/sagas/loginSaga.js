@@ -1,7 +1,7 @@
 import { put, call, delay } from 'redux-saga/effects';
 import { Alert } from 'react-native';
-import * as loginActions from 'app/features/login/actions';
-import { navigateToMainAppScreens } from 'app/navigation/NavigationHelpers';
+import * as loginActions from '../actions';
+import { navigateToMainAppScreens } from '../../../navigation/NavigationHelpers';
 
 export default function* fetchLogin() {
   yield put(loginActions.enableLoader());

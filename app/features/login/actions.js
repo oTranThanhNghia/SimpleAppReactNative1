@@ -1,4 +1,4 @@
-import * as types from 'app/features/login/actionTypes';
+import * as types from './actionTypes';
 
 const TAG = 'Login-action';
 
