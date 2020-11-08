@@ -78,10 +78,18 @@ import com.android.build.OutputFile
  */
 
 project.ext.react = [
-    enableHermes: true,  // clean and rebuild if changing
+    enableHermes: false,  // clean and rebuild if changing
 ]
 
-apply from: "../../node_modules/react-native/react.gradle"
+// https://github.com/maxkomarychev/react-native-ultimate-config/blob/master/docs/cookbook.md#using-multiple-flavors-android
+project.ext.flavorEnvMapping = [
+        dev: "../.env.dev.yaml",
+        stag: "../.env.stag.yaml",
+        prod: "../.env.prod.yaml"
+]
+
+apply from: "../../node_modules/react-native/react.gradle`"
+apply from: "../../node_modules/react-native-ultimate-config/android/rnuc.gradle"
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -150,6 +158,13 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+
+        release {
+            storeFile file('debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
     }
     buildTypes {
         debug {
@@ -161,6 +176,30 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+
+    flavorDimensions "root"
+    productFlavors {
+        dev {
+            applicationId "com.ngh.simpleappreactnative1.dev"
+            dimension 'root'
+
+            signingConfig signingConfigs.debug
+        }
+
+        stag {
+            applicationId "com.ngh.simpleappreactnative1.stag"
+            dimension 'root'
+
+            signingConfig signingConfigs.debug
+        }
+
+        prod {
+            applicationId "com.ngh.simpleappreactnative1"
+            dimension 'root'
+
+            signingConfig signingConfigs.release
         }
     }
 

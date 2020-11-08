@@ -8,8 +8,8 @@ import { getLoginState } from '../selectors';
 
 import i18n from '../../../utils/i18n';
 import * as StringNames from '../../../assets/locales/StringNames';
-import { getConfigs } from '../../../config';
-import SplashScreenNative from 'react-native-splash-screen';
+import env from '../../../config/environment';
+// import SplashScreenNative from 'react-native-splash-screen';
 
 const TAG = 'LoginScreen';
 // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
@@ -35,7 +35,7 @@ class LoginScreen extends Component<Props> {
       <View style={styles.container}>
         <Text>Login Screen</Text>
         <Text>Status: {this.props.status}</Text>
-        <Text>Base_Url: {getConfigs().BASE_URL}</Text>
+        <Text>Base_Url: {env.BASE_URL}</Text>
         <Button onPress={() => this.loginClick()} title={i18n.t(StringNames.Login)} />
       </View>
     );

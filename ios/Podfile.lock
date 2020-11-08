@@ -312,6 +312,8 @@ PODS:
     - React
   - react-native-splash-screen (3.2.0):
     - React
+  - react-native-ultimate-config (3.2.4):
+    - React
   - react-native-webview (9.4.0):
     - React
   - React-RCTActionSheet (0.63.3):
@@ -434,6 +436,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
+  - react-native-ultimate-config (from `../node_modules/react-native-ultimate-config`)
   - react-native-webview (from `../node_modules/react-native-webview`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -514,6 +517,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-splash-screen:
     :path: "../node_modules/react-native-splash-screen"
+  react-native-ultimate-config:
+    :path: "../node_modules/react-native-ultimate-config"
   react-native-webview:
     :path: "../node_modules/react-native-webview"
   React-RCTActionSheet:
@@ -591,6 +596,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 8e68ffbfe23880d3ee9bafa8be2777f60b25cbe2
   react-native-safe-area-context: 13004a45f3021328fdd9ee1f987c3131fb65928d
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
+  react-native-ultimate-config: 3129632ed1b870cef35adefbcfbed02610dae0fb
   react-native-webview: cf5527893252b3b036eea024a1da6996f7344c74
   React-RCTActionSheet: 53ea72699698b0b47a6421cb1c8b4ab215a774aa
   React-RCTAnimation: 1befece0b5183c22ae01b966f5583f42e69a83c2

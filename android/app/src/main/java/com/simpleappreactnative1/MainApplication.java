@@ -10,6 +10,7 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import java.lang.reflect.InvocationTargetException;
 import com.facebook.soloader.SoLoader;
+import com.reactnativeultimateconfig.UltimateConfigModule;
 
 import java.util.List;
 
@@ -47,6 +48,7 @@ public class MainApplication extends Application implements ReactApplication {
         super.onCreate();
         SoLoader.init(this, /* native exopackage */ false);
         initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+        UltimateConfigModule.setBuildConfig(BuildConfig.class);
     }
 
     /**
