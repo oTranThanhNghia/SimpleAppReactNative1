@@ -52,7 +52,6 @@
 		BA36BADC245F18C100248876 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BA36BADD245F18DD00248876 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BA36BADF245F195900248876 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BAF8A620245E641B00A32D5A /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		E9C9021EF1D589DE62F171C4 /* Pods-SimpleAppReactNative1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleAppReactNative1.debug.xcconfig"; path = "Target Support Files/Pods-SimpleAppReactNative1/Pods-SimpleAppReactNative1.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -104,7 +103,6 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				BA36BADC245F18C100248876 /* AppDelegate.h */,
 				BA36BADD245F18DD00248876 /* AppDelegate.m */,
-				BAF8A620245E641B00A32D5A /* main.jsbundle */,
 				BA36BADF245F195900248876 /* main.m */,
 			);
 			name = SimpleAppReactNative1;
