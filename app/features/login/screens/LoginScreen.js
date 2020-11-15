@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import { View, Button, Text } from 'react-native';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styles from './LoginScreenStyles';
 import * as loginActions from '../actions';
@@ -14,12 +14,8 @@ import env from '../../../config/environment';
 const TAG = 'LoginScreen';
 // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
 // https://flow.org/en/docs/react/components/
-type Props = {
-  status: PropTypes.string,
-  onLogin: PropTypes.func,
-};
 
-class LoginScreen extends Component<Props> {
+class LoginScreen extends Component {
   // componentDidMount() {
   //   SplashScreenNative.hide();
   // }
