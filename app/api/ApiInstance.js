@@ -1,4 +1,4 @@
-import ApiModule from 'app/api/ApiModule';
+import ApiModule from './ApiModule';
 
 const apiModule: ApiModule = new ApiModule(null);
 

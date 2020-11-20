@@ -1,21 +1,5 @@
-import Develop from 'app/config/environment/Develop';
-import Production from 'app/config/environment/Production';
-import Staging from 'app/config/environment/Staging';
-import IntegerResources from 'app/config/resources/integer';
-import StringResources from 'app/config/resources/string';
-
-const ENV = 'Develop'; // 'Develop'; 'Production' ; 'Staging';
-
-export function getConfigs() {
-  switch (ENV) {
-    case 'Production':
-      return Production;
-    case 'Staging':
-      return Staging;
-    default:
-      return Develop;
-  }
-}
+import IntegerResources from '../config/resources/integer';
+import StringResources from '../config/resources/string';
 
 export function getIntegerResources() {
   return IntegerResources;

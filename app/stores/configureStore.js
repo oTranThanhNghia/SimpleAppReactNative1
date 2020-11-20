@@ -4,8 +4,8 @@ import { persistStore, persistCombineReducers } from 'redux-persist';
 import storage from 'redux-persist/es/storage';
 import createSagaMiddleware from 'redux-saga';
 
-import rootReducers from 'app/stores/reducers';
-import sagas from 'app/stores/sagas';
+import rootReducers from '../stores/reducers';
+import sagas from '../stores/sagas';
 
 const config = {
   key: 'root',

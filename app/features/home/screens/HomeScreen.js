@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import { View, FlatList, Image, RefreshControl, ActivityIndicator } from 'react-native';
-import { Text, Card, Button, CardItem, Left, Right, Footer } from 'native-base';
+import { Text, Card, Button, CardItem, Left, Right } from 'native-base';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import styles from 'app/features/home/screens/HomeScreenStyles';
-import i18n from 'app/utils/i18n';
-import * as StringNames from 'app/assets/locales/StringNames';
-import HomeSelectors from 'app/features/home/selectors';
-import * as HomeActions from 'app/features/home/actions';
-import { BaseResponse, ArticleObj } from 'app/types/ResponseTypes';
-import { Drawables } from 'app/assets/images';
-import { getIntegerResources, getStringResources } from 'app/config';
+import styles from './HomeScreenStyles';
+import i18n from '../../../utils/i18n';
+import * as StringNames from '../../../assets/locales/StringNames';
+import HomeSelectors from '../selectors';
+import * as HomeActions from '../actions';
+import { BaseResponse, ArticleObj } from '../../../types/ResponseTypes';
+import { Drawables } from '../../../assets/images';
+import { getIntegerResources, getStringResources } from '../../../config';
 import SafeAreaView from 'react-native-safe-area-view';
-import * as NavigationHelpers from 'app/navigation/NavigationHelpers';
+import * as NavigationHelpers from '../../../navigation/NavigationHelpers';
+import env from '../../../config/environment';
 
 const TAG = 'HomeScreen';
 
@@ -24,10 +25,6 @@ type Props = {
 };
 
 class HomeScreen extends Component<Props> {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     console.log(TAG + ' componentDidMount ');
     const status = this.props.status;
@@ -128,11 +125,7 @@ class HomeScreen extends Component<Props> {
 
   render() {
     const status = this.props.status;
-    // console.log(TAG + ' render status= ' + JSON.stringify(status));
-    console.log(
-      TAG + ' render loading= ' + JSON.stringify(status.loading) + ' status.page= ' + status.page
-    );
-    // console.log(TAG + ' render() state= ' + JSON.stringify(this.state));
+
     if (status.loading === true && status.page === 1) {
       return (
         <View style={{ flex: 1, justifyContent: 'center' }}>
@@ -175,6 +168,7 @@ class HomeScreen extends Component<Props> {
     } else {
       return (
         <SafeAreaView style={styles.container}>
+          <Text>Env: {env.NAME}</Text>
           <FlatList
             style={{ paddingLeft: 10, paddingRight: 10 }}
             data={status.articles}

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>232862633438-2j6vsm5ioj7rh1cg9mgit76lcil17ark.apps.googleusercontent.com</string>
+	<string>232862633438-gpe690knhiphnl2djluk54bld9e0rvfj.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.232862633438-2j6vsm5ioj7rh1cg9mgit76lcil17ark</string>
+	<string>com.googleusercontent.apps.232862633438-gpe690knhiphnl2djluk54bld9e0rvfj</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>232862633438-oj9fk8kme8pllb7e16pnasiu8utscmpt.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
@@ -15,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.ngh.SimpleAppReactNative2</string>
+	<string>com.ngh.simpleapp.reactnative3</string>
 	<key>PROJECT_ID</key>
 	<string>simpleappreactnative1</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:232862633438:ios:141cb50fae299e22f7e14f</string>
+	<string>1:232862633438:ios:617ca5adc2c43500f7e14f</string>
 	<key>DATABASE_URL</key>
 	<string>https://simpleappreactnative1.firebaseio.com</string>
 </dict>

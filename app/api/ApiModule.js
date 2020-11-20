@@ -1,15 +1,10 @@
 // class ApiModule.js => get, post, ... basic class
 import axios, { AxiosInstance, AxiosResponse, AxiosError, AxiosRequestConfig } from 'axios';
-import { getConfigs } from 'app/config';
-import { BaseResponse, BaseErrorResponse } from 'app/types/ResponseTypes';
+import env from '../config/environment';
+import { BaseResponse, BaseErrorResponse } from '../types/ResponseTypes';
 
 const TAG = 'ApiModule';
 const TIME_OUT = 30000;
-
-const Config = getConfigs();
-const BaseParam = {
-  apiKey: Config.API_KEY,
-};
 
 export const NETWORK_ERROR = 'NETWORK_ERROR';
 export const TIMEOUT_ERROR = 'TIMEOUT_ERROR'; // not working for Android https://github.com/axios/axios/issues/2073
@@ -18,13 +13,13 @@ export default class ApiModule {
   instance: AxiosInstance;
 
   constructor(info = {}) {
-    console.log(TAG + 'RN version= ' + Config.REACT_NATIVE_VERSION);
+    console.log(TAG + 'env= ', env);
     this.instance = axios.create({
-      baseURL: Config.BASE_URL,
+      baseURL: env.BASE_URL,
       timeout: TIME_OUT, // not working for Android https://github.com/axios/axios/issues/2073
       headers: {
         'Content-Type': 'application/json',
-        'X-Api-Key': Config.API_KEY,
+        'X-Api-Key': env.API_KEY,
       },
     });
     // this.instance.defaults.timeout = TIME_OUT;
@@ -39,7 +34,6 @@ export default class ApiModule {
     //     'CLIENT-NAME': info.clientName || 'name',
     //     'CLIENT-ID': info.clientId || 'id',
     //     'APP-VERSION': info.appVersion || '1.0.0',
-    //     'APP-REACT-NATIVE-VERSION': config.REACT_NATIVE_VERSION || '1.0.0',
     //   },
     // });
   }

@@ -1,5 +1,5 @@
-import NavigationService from 'app/navigation/NavigationService';
-import * as ScreenTypes from 'app/navigation/ScreenTypes';
+import NavigationService from './NavigationService';
+import * as ScreenTypes from './ScreenTypes';
 
 export function navigateToHome(params) {
   NavigationService.navigate(ScreenTypes.Home, params);

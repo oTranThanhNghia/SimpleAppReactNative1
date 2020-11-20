@@ -1,25 +1,21 @@
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import { View, Button, Text } from 'react-native';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import styles from 'app/features/login/screens/LoginScreenStyles';
-import * as loginActions from 'app/features/login/actions';
-import { getLoginState } from 'app/features/login/selectors';
+import styles from './LoginScreenStyles';
+import * as loginActions from '../actions';
+import { getLoginState } from '../selectors';
 
-import i18n from 'app/utils/i18n';
-import * as StringNames from 'app/assets/locales/StringNames';
-import { getConfigs } from 'app/config';
-import SplashScreenNative from 'react-native-splash-screen';
+import i18n from '../../../utils/i18n';
+import * as StringNames from '../../../assets/locales/StringNames';
+import env from '../../../config/environment';
+// import SplashScreenNative from 'react-native-splash-screen';
 
 const TAG = 'LoginScreen';
 // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
 // https://flow.org/en/docs/react/components/
-type Props = {
-  status: PropTypes.string,
-  onLogin: PropTypes.func,
-};
 
-class LoginScreen extends Component<Props> {
+class LoginScreen extends Component {
   // componentDidMount() {
   //   SplashScreenNative.hide();
   // }
@@ -35,7 +31,7 @@ class LoginScreen extends Component<Props> {
       <View style={styles.container}>
         <Text>Login Screen</Text>
         <Text>Status: {this.props.status}</Text>
-        <Text>Base_Url: {getConfigs().BASE_URL}</Text>
+        <Text>Base_Url: {env.BASE_URL}</Text>
         <Button onPress={() => this.loginClick()} title={i18n.t(StringNames.Login)} />
       </View>
     );

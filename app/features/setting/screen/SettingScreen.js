@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import styles from 'app/features/setting/screen/SettingScreenStyles';
-import i18n from 'app/utils/i18n';
-import * as StringNames from 'app/assets/locales/StringNames';
+import styles from './SettingScreenStyles';
+import i18n from '../../../utils/i18n';
+import * as StringNames from '../../../assets/locales/StringNames';
 
 const TAG = 'SettingScreen';
 

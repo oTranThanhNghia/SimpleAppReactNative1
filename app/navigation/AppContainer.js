@@ -5,18 +5,18 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import createAnimatedSwitchNavigator from 'react-navigation-animated-switch';
 import { Transition } from 'react-native-reanimated';
 
-import LoginScreen from 'app/features/login/screens/LoginScreen';
-import HomeScreen from 'app/features/home/screens/HomeScreen';
-import NewsScreen from 'app/features/news/screen/NewsScreen';
-import NotificationScreen from 'app/features/notification/screen/NotificationScreen';
-import AccountScreen from 'app/features/account/screen/AccountScreen';
-import SettingScreen from 'app/features/setting/screen/SettingScreen';
-import DetailTopHeadlinesScreen from 'app/features/detail_top_headlines/screen/DetailTopHeadlinesScreen';
+import LoginScreen from '../features/login/screens/LoginScreen';
+import HomeScreen from '../features/home/screens/HomeScreen';
+import NewsScreen from '../features/news/screen/NewsScreen';
+import NotificationScreen from '../features/notification/screen/NotificationScreen';
+import AccountScreen from '../features/account/screen/AccountScreen';
+import SettingScreen from '../features/setting/screen/SettingScreen';
+import DetailTopHeadlinesScreen from '../features/detail_top_headlines/screen/DetailTopHeadlinesScreen';
 
-import * as ScreenTypes from 'app/navigation/ScreenTypes';
+import * as ScreenTypes from '../navigation/ScreenTypes';
 
-import i18n from 'app/utils/i18n';
-import * as StringNames from 'app/assets/locales/StringNames';
+import i18n from '../utils/i18n';
+import * as StringNames from '../assets/locales/StringNames';
 
 const TransitionScreen = (
   <Transition.Together>

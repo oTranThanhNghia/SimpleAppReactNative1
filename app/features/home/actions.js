@@ -1,6 +1,6 @@
-import * as types from 'app/features/home/actionNames';
-import { BaseParamAction, ParamTopHeadlines } from 'app/types/ActionTypes';
-import { BaseResponse } from 'app/types/ResponseTypes';
+import * as types from './actionNames';
+import { BaseParamAction, ParamTopHeadlines } from '../../types/ActionTypes';
+import { BaseResponse } from '../../types/ResponseTypes';
 
 const TAG = 'Home-action';
 
