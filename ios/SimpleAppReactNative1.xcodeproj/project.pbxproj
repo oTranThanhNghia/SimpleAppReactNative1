@@ -606,6 +606,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 99045B196DF6A4E648FFBA8B /* Pods-SimpleAppReactNative1.debugprod.xcconfig */;
 			buildSettings = {
+				APP_DISPLAY_NAME = News;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -640,6 +641,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7579DFA15D6558D72B04E585 /* Pods-SimpleAppReactNative1.releaseprod.xcconfig */;
 			buildSettings = {
+				APP_DISPLAY_NAME = News;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Distribution: Impl, inc (YMA7U6H34P)";
@@ -844,6 +846,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D9916E3821D4171732F23E2A /* Pods-SimpleAppReactNative1.debugdev.xcconfig */;
 			buildSettings = {
+				APP_DISPLAY_NAME = "News-Dev";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -968,6 +971,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4D3B7AFCD34070D302329C6E /* Pods-SimpleAppReactNative1.debugstag.xcconfig */;
 			buildSettings = {
+				APP_DISPLAY_NAME = "News-Stag";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1085,6 +1089,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7F95E66E800D2D66645878ED /* Pods-SimpleAppReactNative1.releasedev.xcconfig */;
 			buildSettings = {
+				APP_DISPLAY_NAME = "News-Dev";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Distribution: Impl, inc (YMA7U6H34P)";
@@ -1193,6 +1198,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1D35A83D2A6025BA083CE6AE /* Pods-SimpleAppReactNative1.releasestag.xcconfig */;
 			buildSettings = {
+				APP_DISPLAY_NAME = "News-Stag";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Distribution: Impl, inc (YMA7U6H34P)";
