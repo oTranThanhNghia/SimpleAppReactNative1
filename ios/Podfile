@@ -13,7 +13,11 @@ target 'SimpleAppReactNative1' do
   'ReleaseProd' => :release
 
   config = use_native_modules!
-  use_react_native!(:path => config["reactNativePath"])
+  use_react_native!(
+    :path => config[:reactNativePath],
+    # to enable hermes on iOS, change `false` to `true` and then install pods
+    :hermes_enabled => false
+  )
 
   target 'SimpleAppReactNative1Tests' do
     inherit! :complete
@@ -40,6 +44,6 @@ target 'SimpleAppReactNative1' do
           end
       end
     end
-    flipper_post_install(installer)
+    react_native_post_install(installer)
   end
 end
